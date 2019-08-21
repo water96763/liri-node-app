@@ -68,17 +68,17 @@ function searchOmdb() {
 
     if (!process.argv[3]) {
         axios.get("http://www.omdbapi.com/?i=tt0485947&y=&plot=short&apikey=trilogy")
-        .then(
-            function(response) {
-                console.log("+++++++++++++");
-                console.log("Movie name: " + response.data.Title);
-                console.log("Release Year: " + response.data.Year);
-                console.log("IMDB rating: " + response.data.imdbRating);
-                console.log("Rotten Tomatoes rating: " + response.data.Ratings[1].Value);
-                console.log("Country of production: " + response.data.Country);
-                console.log("Language: " + response.data.Language);
-                console.log("Plot summary: " + response.data.Plot);
-                console.log("Actors: " + response.data.Actors);
+            .then(
+                function(response) {
+                    console.log("+++++++++++++");
+                    console.log("Movie name: " + response.data.Title);
+                    console.log("Release Year: " + response.data.Year);
+                    console.log("IMDB rating: " + response.data.imdbRating);
+                    console.log("Rotten Tomatoes rating: " + response.data.Ratings[1].Value);
+                    console.log("Country of production: " + response.data.Country);
+                    console.log("Language: " + response.data.Language);
+                    console.log("Plot summary: " + response.data.Plot);
+                    console.log("Actors: " + response.data.Actors);
             })
             .catch(function(error) {
                 if (error.response) {
@@ -138,13 +138,13 @@ function searchFs() {
                 process.argv[3] = dataArray[1];
                 searchSpotify();
             });        
-        }
+}
 
-    function writeTextFile() {   
+function writeTextFile() {   
         fs.writeFile('consolefile.txt', console.log, function (err) {
         if (err) throw err;
         console.log("Saved");
-});
+        });
 }
 
 function appendTextFile() {
@@ -168,5 +168,5 @@ else if (process.argv[2] === "do-what-it-says") {
 else {
     console.log("Please choose something to do");
 }
-writeTextFile();
-appendTextFile();
+// writeTextFile();
+// appendTextFile();
