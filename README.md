@@ -1,4 +1,4 @@
-# liri-node-app
+# Liri-Node-App
 Liri App
 
 This app is a LIRI (Language Interpretation and Recognition Interface). It will use a command line requests and give back data.  
